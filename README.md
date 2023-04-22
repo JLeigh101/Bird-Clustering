@@ -5,9 +5,16 @@
 ### John Leigh, Jessica Greco, Michael O'Leary, Connor Thomas, Paul Brown
 
 ## Project Summary
-We want to explore bird migration patterns, with a focus on endangered species in the midwest. Using publicly available data, we will create visualizations of bird populations over time.
+In this project we focused on visualizing data about bird sightings in Illinois. We chose 10 different species, many of which were endangered or at-risk in recent history, and displayed the bird sighting data associated with each species. The bird sighting data we used to make these visualizations is made publically available through Cornell's eBird website.
 
-The practical objective was to find a large dataset (730k records), convert it into a CSV, clean the data and populate a SQLite database. Then create a Flask app server to return webpage queries. Finally, creating an interactive webpage, using HTML, JavaScript, and CSS stylesheets to present the user-filtered data in a dynamic, accurate, and visually pleasing format.
+The steps used to create this visualization were: 
+1.  Download the .CSV formatted raw data from eBird (Cornell)
+2.  Perform an ETL on the .CSV to ensure it was ready for analysis
+  * This included dropping unused columns, converting date formats, and creating an index column with unique, sequential values as our Primary Key
+3.  Populate a sqlite database with the cleanbird.csv data 
+4.  Use Flask to define API endpoints for our javascript files to reference and pull data from
+  * the Flask routes return sql queries of our sqlite database using sqlalchemy and return the data in JSON format using the jsonify(data) function
+5.  Create a javascript file that creates data visualizations using Leaflet.js and Plotly.js. Data was accessed from our API endpoints using D3.js
 
 The applications, libraries and tools that we used include:
 - Applications
@@ -20,13 +27,15 @@ The applications, libraries and tools that we used include:
   - jquery
   - Bootstrap
   - Leaflet.js
+  - Plotly.js
   - StadiaMaps
   - D3.js
   - Pandas (Python)
+  - SQLAlchemy
 
 
 **INSTRUCTIONS FOR RUNNING THE PROGRAM ON YOUR LOCAL MACHINE**
-1.  Ensure cleanbird.csv has dates in YYYY-MM-DD format
+1.  Ensure cleanbird.csv has dates in YYYY-MM-DD format (note that github cannot store a file this large, so you must download it from the cleanbird.csv repo link below)
 2.  Run etl_all_columns.ipynb and etl_selected_columns.ipynb
 3.  In the integrated terminal, run this command: python bird_alchemy.py
    * Note: you will need to install both flask and flask-CORS in order to run this
