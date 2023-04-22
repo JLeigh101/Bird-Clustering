@@ -9,19 +9,20 @@ We want to explore bird migration patterns, with a focus on endangered species i
 
 The practical objective was to find a large dataset (730k records), convert it into a CSV, clean the data and populate a SQLite database. Then create a Flask app server to return webpage queries. Finally, creating an interactive webpage, using HTML, JavaScript, and CSS stylesheets to present the user-filtered data in a dynamic, accurate, and visually pleasing format.
 
-This project hinges on the communication and interaction between several independent components. The applications, libraries and tools that we used include:
+The applications, libraries and tools that we used include:
 - Applications
-  - SQLite
-  - Jupyter Lab
-  - Excel
+  - VS Code
+  - SQLite3
   - Flask
+  - Excel
 
 - Libraries
   - jquery
   - Bootstrap
-  - Leaflet
+  - Leaflet.js
   - StadiaMaps
-  - D3
+  - D3.js
+  - Pandas (Python)
 
 
 **INSTRUCTIONS FOR RUNNING THE PROGRAM ON YOUR LOCAL MACHINE**
@@ -50,7 +51,7 @@ This project hinges on the communication and interaction between several indepen
 ### Creating a Jupyter Notebook ETL to read CSV files into SQLite
 To start, we created two .ipynb files to web scrape publiclly available data regarding bird migrations. The data was then merged, cleaned, and written to a CSV file: cleanbird.  The data was then read into a a SQLite database using etl_selected_columns.ipynb.
 
-Excel File: https://drive.google.com/file/d/1D9gYqRMf75FjYv41oDJFoQ8fWJsGW2iE/view?usp=sharing 
+cleanbird.csv file repo (too large for github): https://drive.google.com/file/d/1D9gYqRMf75FjYv41oDJFoQ8fWJsGW2iE/view?usp=sharing 
 
 ### A Flask session was created for analysis
 SQLite is being used to host the data and perform anlysis functions. bird_alchemy.py 
