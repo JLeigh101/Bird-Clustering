@@ -15,6 +15,7 @@ The steps used to create this visualization were:
 4.  Use Flask to define API endpoints for our javascript files to reference and pull data from
   * the Flask routes return sql queries of our sqlite database using sqlalchemy and return the data in JSON format using the jsonify(data) function
 5.  Create a javascript file that creates data visualizations using Leaflet.js and Plotly.js. Data was accessed from our API endpoints using D3.js
+6.  Index the .html and manage styling in final-index.html and markers.css
 
 The applications, libraries and tools that we used include:
 - Applications
